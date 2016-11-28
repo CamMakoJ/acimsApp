@@ -5,7 +5,16 @@ Create tabs with an icon and label, using the tabs-positive style.
 Each tab's child <ion-nav-view> directive will have its own
 navigation history that also transitions its views in and out.
 -->
-<button ng-click="pullList()">List</button>
 <div ng-repeat="x in data.content">
-  {{x.CommonName_Acims}}
+  <div class="card">
+    <div class="item item-divider">
+    {{x.ScientificName_Acims}}
+  </div>
+  <div class="item item-text-wrap">
+    <ul>
+    <li>Common Name: {{x.CommonName_Acims}}</li>
+    <li>Synonym: {{x.Synonym}}</li>
+  </ul>
+    </div>
+  </div>
 </div>

@@ -8,5 +8,6 @@ $scope.pullList = function() {
   console.log($scope.data);
 };
 
+$scope.pullList();
 
 });
