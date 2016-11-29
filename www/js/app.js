@@ -38,7 +38,15 @@ angular.module('acimsApp', ['ionic', 'acimsApp.controllers', 'acimsApp.services'
     url: '/home',
     templateUrl: 'templates/home.html',
     controller: 'HomeCtrl'
-  });
+  })
+
+  .state('about', {
+  name: 'about',
+  url: '/about',
+  templateUrl: 'templates/about.html',
+  controller: 'AboutCtrl'
+});
+
 
 
 

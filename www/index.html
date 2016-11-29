@@ -36,14 +36,16 @@
   </head>
   <body ng-app="acimsApp">
 
-
-
-    <ion-header-bar align-title="center" class="bar-positive">
+    <ion-header-bar align-title="center" class="bar-positive" no-tap-scroll="true">
       <div class="buttons">
-        <button class="button ion-navicon-round"></button>
-      </div>
+  <button class="button ion-search" ui-sref="home"></button>
+</div>
       <h1 class="title">ACIMS List</h1>
-          </ion-header-bar>
+      <div class="buttons">
+  <button class="button ion-quote" ui-sref="about"></button>
+</div>
+    </ion-header-bar>
+
     <ion-content class="has-header">
       <ui-view></ui-view>
     </ion-content>
