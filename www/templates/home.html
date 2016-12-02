@@ -14,25 +14,11 @@ This is where the search/filter will go
 <div ng-repeat="x in data.content | filter:filterInput | limitTo:25">
   <div class="card">
     <div class="item item-divider">
-      {{x.ScientificName_Acims}}
+
+      <a ui-sref="species({ID: x.ID})" class="italics">{{x.ScientificName_Acims}}</a>
     </div>
     <div class="item item-text-wrap">
-      <ul>
-        <li>Common Name:
-          {{x.CommonName_Acims}}</li>
-        <li>Synonym:
-          {{x.Synonym}}</li>
-        <li>S-Rank 2015:
-          {{x.S_Rank2015}}</li>
-        <li>Listed:
-          {{x.Tracked_Watched}}</li>
-        <li>Origin:
-          {{x.Origin_Acims}}</li>
-        <li>Synonym:
-          {{x.Synonym}}</li>
-        <li>Comments:
-          {{x.Comment_FallUpdate}}</li>
-      </ul>
-    </div>
+        <p>{{x.CommonName_Acims}}</p>
+        </div>
   </div>
 </div>
