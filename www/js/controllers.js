@@ -1,19 +1,29 @@
 angular.module('acimsApp.controllers', [])
 
-.controller('HomeCtrl', function($http, listService, $scope) {
-//  console.log('HomeCtrl is working');
+.controller('HomeCtrl', function($http, listService, $scope, $state) {
+  //  console.log('HomeCtrl is working');
+  $scope.pullList = function() {
+    $scope.data = listService.getList();
+  };
 
-$scope.pullList = function() {
-  $scope.data = listService.getList();
-  //console.log($scope.data);
-};
-
-$scope.pullList();
+  $scope.pullList();
 
 })
 
 
-.controller('AboutCtrl', function($http, $scope) {
-  console.log('AboutCtrl is working');
+.controller('AboutCtrl', function($http, $scope, $state) {
+//  console.log('AboutCtrl is working');
+
+})
+
+.controller('speciesCtrl', function($http, $scope, $stateParams, speciesService, $state) {
+//  console.log('speciesCtrl is working');
+  //get ID
+  $scope.id = $stateParams.ID;
+  //Pull JSON for species
+  $scope.pullSpecies = function(id) {
+    $scope.data = speciesService.getSpecies(id);
+  };
+  $scope.pullSpecies($scope.id);
 
 });
