@@ -1,1 +1,17 @@
 /* Empty. Add your own CSS if you like */
+
+.italics {
+  font-style: italic;
+  font-size: 20px;
+}
+
+.card {
+  width: auto;
+
+}
+.centre {
+    position:absolute;
+    left: 0;
+    right: 0;
+
+}
