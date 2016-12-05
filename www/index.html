@@ -35,19 +35,19 @@
     <script src="js/services.js"></script>
   </head>
   <body ng-app="acimsApp">
-<div id="top"></div>
-    <ion-header-bar align-title="center" class="bar-positive">
-      <div class="buttons">
-  <button class="button ion-search" ui-sref="home"></button>
-</div>
-      <h1 class="title">ACIMS List</h1>
-      <div class="buttons">
-  <button class="button ion-quote" ui-sref="about"></button>
-</div>
-    </ion-header-bar>
+    <div id="top"></div>
 
-    <ion-content class="has-header">
-      <ui-view></ui-view>
-    </ion-content>
+    <ion-nav-bar class="bar-positive">
+      </ion-nav-bar>
+
+
+
+      <!-- where the initial view template will be rendered -->
+      <ion-nav-view>
+        <ion-view class="has-header">
+
+        </ion-view>
+      </ion-nav-view>
+
   </body>
 </html>

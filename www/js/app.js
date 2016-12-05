@@ -23,7 +23,7 @@ angular.module('acimsApp', ['ionic', 'acimsApp.controllers', 'acimsApp.services'
   });
 
   //test for auto scroll to top, also add root scope to main .run
-  $rootScope.$on('$stateChangeStart', function(){
+  $rootScope.$on('$stateChangeStart', function() {
     $anchorScroll('top');
   });
 })
@@ -37,12 +37,26 @@ angular.module('acimsApp', ['ionic', 'acimsApp.controllers', 'acimsApp.services'
   $stateProvider
 
   // Each tab has its own nav history stack:
+    .state('menu', {
+    name: 'menu',
+    url: '/menu',
+    templateUrl: 'templates/menu.html',
+    controller: 'MenuCtrl'
+  })
 
-    .state('home', {
+
+  .state('home', {
     name: 'home',
     url: '/home',
     templateUrl: 'templates/home.html',
-    controller: 'HomeCtrl'
+    controller: 'HomeCtrl',
+  })
+
+  .state('search', {
+    name: 'search',
+    url: '/search',
+    templateUrl: 'templates/search.html',
+    controller: 'SearchCtrl'
   })
 
   .state('about', {

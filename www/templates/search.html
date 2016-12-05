@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<!--
+This page is the general list page, limited to 10 results based on ng-repeat filter
+-->
+
+<!--
+This is where the search/filter will go
+-->
+<label class="item item-input">
+  <i class="icon ion-search placeholder-icon"></i>
+  <input ng-model="filterInput" type="search" placeholder="Search">
+</label>
+
+<div ng-repeat="x in data.content | filter:filterInput | limitTo:25">
+  <div class="card">
+    <div class="item item-divider">
+
+      <a ui-sref="species({ID: x.ID})" class="italics">{{x.ScientificName_Acims}}</a>
+    </div>
+    <div class="item item-text-wrap">
+        <p>{{x.CommonName_Acims}}</p>
+        </div>
+  </div>
+</div>

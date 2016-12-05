@@ -1,7 +1,7 @@
 angular.module('acimsApp.controllers', [])
 
-.controller('HomeCtrl', function($http, listService, $scope, $state) {
-  //  console.log('HomeCtrl is working');
+.controller('SearchCtrl', function($http, listService, $scope, $state) {
+  console.log('SearchCtrl is working');
   $scope.pullList = function() {
     $scope.data = listService.getList();
   };
@@ -10,14 +10,25 @@ angular.module('acimsApp.controllers', [])
 
 })
 
-
 .controller('AboutCtrl', function($http, $scope, $state) {
-//  console.log('AboutCtrl is working');
+  console.log('AboutCtrl is working');
+})
 
+.controller('HomeCtrl', function($http, $scope, $state) {
+  console.log('HomeCtrl is working');
+})
+
+.controller('MenuCtrl', function($http, $scope, $state) {
+  console.log('MenuCtrl is working');
+  function ContentController($scope, $ionicSideMenuDelegate) {
+  $scope.toggleLeft = function() {
+    $ionicSideMenuDelegate.toggleLeft();
+  };
+}
 })
 
 .controller('speciesCtrl', function($http, $scope, $stateParams, speciesService, $state) {
-//  console.log('speciesCtrl is working');
+  //  console.log('speciesCtrl is working');
   //get ID
   $scope.id = $stateParams.ID;
   //Pull JSON for species
@@ -25,5 +36,4 @@ angular.module('acimsApp.controllers', [])
     $scope.data = speciesService.getSpecies(id);
   };
   $scope.pullSpecies($scope.id);
-
 });
