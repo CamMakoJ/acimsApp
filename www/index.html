@@ -43,20 +43,20 @@
         <!-- Center content -->
         <div>
           <ion-side-menu-content>
-            <ion-header-bar style="">
+            <ion-header-bar class="bar bar-header bar-balanced">
               <div>
                 <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
                 <h1 class="title">Alberta Plant Species List</h1>
               </div>
             </ion-header-bar>
 
-            <ion-content scroll="true">
+            <ion-content scroll="true" class="has-header">
               <ui-view></ui-view>
             </ion-content>
           </ion-side-menu-content>
 
           <ion-side-menu>
-            <div class="menu-wrapper ">
+            <div class="menu-wrapper">
               <ul class="list">
                 <li class="item" ui-sref="home" ui-sref-active="active">Home</li>
                 <li class="item" ui-sref="search" ui-sref-active="active">Search</li>
