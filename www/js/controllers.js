@@ -1,5 +1,12 @@
 angular.module('acimsApp.controllers', [])
 
+.controller('MainCtrl', function($http, $scope, $state, $ionicSideMenuDelegate) {
+  console.log('MainCtrl is working');
+  $scope.openMenu = function() {
+    $ionicSideMenuDelegate.toggleLeft();
+  };
+  console.log($state);
+})
 .controller('SearchCtrl', function($http, listService, $scope, $state) {
   console.log('SearchCtrl is working');
   $scope.pullList = function() {
@@ -18,14 +25,7 @@ angular.module('acimsApp.controllers', [])
   console.log('HomeCtrl is working');
 })
 
-.controller('MenuCtrl', function($http, $scope, $state) {
-  console.log('MenuCtrl is working');
-  function ContentController($scope, $ionicSideMenuDelegate) {
-  $scope.toggleLeft = function() {
-    $ionicSideMenuDelegate.toggleLeft();
-  };
-}
-})
+
 
 .controller('speciesCtrl', function($http, $scope, $stateParams, speciesService, $state) {
   //  console.log('speciesCtrl is working');

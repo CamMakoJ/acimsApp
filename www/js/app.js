@@ -37,17 +37,9 @@ angular.module('acimsApp', ['ionic', 'acimsApp.controllers', 'acimsApp.services'
   $stateProvider
 
   // Each tab has its own nav history stack:
-    .state('menu', {
-    name: 'menu',
-    url: '/menu',
-    templateUrl: 'templates/menu.html',
-    controller: 'MenuCtrl'
-  })
-
-
-  .state('home', {
+    .state('home', {
     name: 'home',
-    url: '/home',
+    url: '/',
     templateUrl: 'templates/home.html',
     controller: 'HomeCtrl',
   })
@@ -73,10 +65,7 @@ angular.module('acimsApp', ['ionic', 'acimsApp.controllers', 'acimsApp.services'
     controller: 'speciesCtrl'
   });
 
-
-
-
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/home');
+  $urlRouterProvider.otherwise('/');
 
 });
