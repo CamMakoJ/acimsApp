@@ -6,6 +6,8 @@ angular.module('acimsApp.controllers', [])
   };
 })
 .controller('SearchCtrl', function($http, listService, $scope, $state) {
+  $scope.filterInput = '';
+
   $scope.pullList = function() {
     $scope.data = listService.getList();
   };
@@ -13,6 +15,7 @@ angular.module('acimsApp.controllers', [])
 })
 
 .controller('AboutCtrl', function($http, $scope, $state) {
+  console.log($scope.filterInput);
   })
 
 .controller('HomeCtrl', function($http, $scope, $state) {

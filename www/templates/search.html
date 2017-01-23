@@ -9,7 +9,7 @@ This page is the general list page, limited to 25 results based on ng-repeat fil
   <input ng-model="filterInput" type="search" placeholder="Search">
 </label>
 
-<div ng-repeat="x in data.content | filter:filterInput | limitTo:25">
+<div ng-repeat="x in data.content | filter:filterInput | limitTo:20">
   <div class="card">
     <div class="item item-divider">
 
