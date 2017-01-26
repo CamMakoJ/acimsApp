@@ -15,13 +15,17 @@ angular.module('acimsApp.controllers', [])
 })
 
 .controller('AboutCtrl', function($http, $scope, $state) {
-  console.log($scope.filterInput);
   })
 
 .controller('HomeCtrl', function($http, $scope, $state) {
-  })
+  function onDeviceReady() {
+    admob.createBannerView({publisherId: "ca-app-pub-5841639947461001/2632111177"});
+  }
+
+  document.addEventListener('deviceready', onDeviceReady, false);
 
 
+})
 
 .controller('speciesCtrl', function($http, $scope, $stateParams, speciesService, $state) {
   //get ID
