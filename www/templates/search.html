@@ -9,11 +9,11 @@ This page is the general list page, limited to 25 results based on ng-repeat fil
   <input ng-model="filterInput" type="search" placeholder="Search">
 </label>
 
-<div ng-repeat="x in data.content | filter:filterInput | limitTo:20">
+<div ng-repeat="x in data.content | filter:filterInput | limitTo:25">
   <div class="card">
     <div class="item item-divider">
 
-      <a ui-sref="species({ID: x.ID})" class="italics">{{x.ScientificName_Acims}}</a>
+      <a ui-sref="species({ID: x.ID})" class="italics" ng-click="updateFilter()">{{x.ScientificName_Acims}} </a>
     </div>
     <div class="item item-text-wrap">
         <p>{{x.CommonName_Acims}}</p>

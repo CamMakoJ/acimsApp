@@ -58,6 +58,13 @@ angular.module('acimsApp', ['ionic', 'acimsApp.controllers', 'acimsApp.services'
     controller: 'AboutCtrl'
   })
 
+  .state('rankings', {
+    name: 'rankings',
+    url: '/rankings',
+    templateUrl: 'templates/rankings.html',
+    controller: 'rankingsCtrl'
+  })
+
   .state('species', {
     name: 'species',
     url: '/species/:ID',
