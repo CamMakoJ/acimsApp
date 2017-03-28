@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('acimsApp', ['ionic', 'acimsApp.controllers', 'acimsApp.services'])
+angular.module('acimsApp', ['ionic', 'acimsApp.controllers', 'acimsApp.services', 'admobModule'])
 
 .run(function($ionicPlatform, $rootScope, $anchorScroll) {
   $ionicPlatform.ready(function() {
@@ -56,6 +56,13 @@ angular.module('acimsApp', ['ionic', 'acimsApp.controllers', 'acimsApp.services'
     url: '/about',
     templateUrl: 'templates/about.html',
     controller: 'AboutCtrl'
+  })
+
+  .state('rankings', {
+    name: 'rankings',
+    url: '/rankings',
+    templateUrl: 'templates/rankings.html',
+    controller: 'rankingsCtrl'
   })
 
   .state('species', {
