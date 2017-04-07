@@ -7,15 +7,23 @@ angular.module('acimsApp.controllers', [])
   })
 
   .controller('SearchCtrl', function($http, listService, $scope, $state, $rootScope) {
+
     $scope.updateFilter = function() {
       $rootScope.filterInput = $scope.filterInput;
     };
 
+    $scope.toArr = function(obj){
+      $scope.arr = Object.values(obj);
+    };
 
     $scope.pullList = function() {
       $scope.data = listService.getList();
+      $scope.toArr($scope.data);
     };
     $scope.pullList();
+
+
+
   })
 
   .controller('AboutCtrl', function($http, $scope, $state) {
@@ -47,5 +55,4 @@ angular.module('acimsApp.controllers', [])
     $scope.pullSpecies($scope.id);
   })
 
-  .controller('rankingsCtrl', function($scope) {
-  });
+  .controller('rankingsCtrl', function($scope) {});

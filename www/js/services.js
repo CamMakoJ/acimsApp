@@ -18,7 +18,7 @@ angular.module('acimsApp.services', [])
     getSpecies: function(val) {
       var obj = {};
       $http.get('js/list.json').success(function(data) {
-        //any processing can go here (returns 1 species, with ID = valS)
+        //any processing can go here (returns 1 species, with ID = val)
         obj.content = data[val];
       });
       return obj;
