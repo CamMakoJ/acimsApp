@@ -7,7 +7,7 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('acimsApp', ['ionic', 'acimsApp.controllers', 'acimsApp.services', 'admobModule'])
 
-.run(function($ionicPlatform, $rootScope, $anchorScroll) {
+.run(function($ionicPlatform, $rootScope, $anchorScroll, $window, $stateParams) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -21,15 +21,9 @@ angular.module('acimsApp', ['ionic', 'acimsApp.controllers', 'acimsApp.services'
       StatusBar.styleDefault();
     }
   });
-
-  //test for auto scroll to top, also add root scope to main .run
-  $rootScope.$on('$stateChangeStart', function() {
-    $anchorScroll('top');
-  });
 })
 
 .config(function($stateProvider, $urlRouterProvider) {
-
   // Ionic uses AngularUI Router which uses the concept of states
   // Learn more here: https://github.com/angular-ui/ui-router
   // Set up the various states which the app can be in.

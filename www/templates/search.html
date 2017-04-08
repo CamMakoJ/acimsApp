@@ -4,19 +4,23 @@ This page is the general list page, limited to 25 results based on ng-repeat fil
 -->
 
 <!--Search Bar -->
-<label class="item item-input">
+
+
+  <label class="item item-input">
   <i class="icon ion-search placeholder-icon"></i>
   <input ng-model="filterInput" type="search" placeholder="Search">
 </label>
 
-<div ng-repeat="x in data.content | filter:filterInput | limitTo:25">
-  <div class="card">
-    <div class="item item-divider">
-
-      <a ui-sref="species({ID: x.ID})" class="italics" ng-click="updateFilter()">{{x.ScientificName_Acims}} </a>
-    </div>
-    <div class="item item-text-wrap">
-        <p>{{x.CommonName_Acims}}</p>
+  <ionic-content>
+    <div collection-repeat="x in data | filter:filterInput | orderBy:'ScientificName_Acims'">
+      <div class="card">
+        <div class="item item-divider">
+          <a ui-sref="species({ID: x.ID})" class="italics" ng-click="updateFilter()">{{x.ScientificName_Acims}} </a>
         </div>
-  </div>
-</div>
+        <div class="item item-text-wrap">
+          <p>{{x.CommonName_Acims}}</p>
+        </div>
+      </div>
+    </div>
+  </ionic-content>
+

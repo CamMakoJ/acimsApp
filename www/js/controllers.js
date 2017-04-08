@@ -6,15 +6,19 @@ angular.module('acimsApp.controllers', [])
     };
   })
 
-  .controller('SearchCtrl', function($http, listService, $scope, $state, $rootScope) {
+  .controller('SearchCtrl', function(listService, $scope, $rootScope) {
+
     $scope.updateFilter = function() {
       $rootScope.filterInput = $scope.filterInput;
     };
 
 
     $scope.pullList = function() {
-      $scope.data = listService.getList();
-    };
+      $scope.run = listService.getList().then(function(data){
+        $scope.data = data;
+      });
+      };
+
     $scope.pullList();
   })
 
@@ -37,7 +41,10 @@ angular.module('acimsApp.controllers', [])
 
   })
 
-  .controller('speciesCtrl', function($http, $scope, $stateParams, speciesService, $state) {
+
+  .controller('speciesCtrl', function($http, $scope, $stateParams, speciesService, $state, $uiViewScroll, $ionicScrollDelegate) {
+      $ionicScrollDelegate.anchorScroll();
+
     //get ID
     $scope.id = $stateParams.ID;
     //Pull JSON for species
@@ -47,5 +54,6 @@ angular.module('acimsApp.controllers', [])
     $scope.pullSpecies($scope.id);
   })
 
-  .controller('rankingsCtrl', function($scope) {
-  });
+
+  .controller('rankingsCtrl', function($scope) {});
+
