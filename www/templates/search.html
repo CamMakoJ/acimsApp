@@ -11,7 +11,8 @@ This page is the general list page, limited to 25 results based on ng-repeat fil
   <i class="icon ion-search placeholder-icon"></i>
   <input ng-model="filterInput" type="search" placeholder="Search">
 </label>
-<ionic-content overflow-scroll="true">
+
+<ion-content overflow-scroll="true">
   <ion-list>
     <div collection-repeat="x in data | filter:filterInput | orderBy:'ScientificName_Acims'" item-height="100px">
       <div class="card">
@@ -24,4 +25,4 @@ This page is the general list page, limited to 25 results based on ng-repeat fil
       </div>
     </div>
   </ion-list>
-</ionic-content>
+</ion-content>
