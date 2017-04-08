@@ -6,13 +6,14 @@ This page is the general list page, limited to 25 results based on ng-repeat fil
 <!--Search Bar -->
 
 
-  <label class="item item-input">
+
+<label class="item item-input">
   <i class="icon ion-search placeholder-icon"></i>
   <input ng-model="filterInput" type="search" placeholder="Search">
 </label>
-
-  <ionic-content>
-    <div collection-repeat="x in data | filter:filterInput | orderBy:'ScientificName_Acims'">
+<ionic-content overflow-scroll="true">
+  <ion-list>
+    <div collection-repeat="x in data | filter:filterInput | orderBy:'ScientificName_Acims'" item-height="100px">
       <div class="card">
         <div class="item item-divider">
           <a ui-sref="species({ID: x.ID})" class="italics" ng-click="updateFilter()">{{x.ScientificName_Acims}} </a>
@@ -22,5 +23,5 @@ This page is the general list page, limited to 25 results based on ng-repeat fil
         </div>
       </div>
     </div>
-  </ionic-content>
-
+  </ion-list>
+</ionic-content>

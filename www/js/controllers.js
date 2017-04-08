@@ -14,10 +14,10 @@ angular.module('acimsApp.controllers', [])
 
 
     $scope.pullList = function() {
-      $scope.run = listService.getList().then(function(data){
+      $scope.run = listService.getList().then(function(data) {
         $scope.data = data;
       });
-      };
+    };
 
     $scope.pullList();
   })
@@ -42,8 +42,8 @@ angular.module('acimsApp.controllers', [])
   })
 
 
-  .controller('speciesCtrl', function($http, $scope, $stateParams, speciesService, $state, $uiViewScroll, $ionicScrollDelegate) {
-      $ionicScrollDelegate.anchorScroll();
+  .controller('speciesCtrl', function($http, $scope, $stateParams, speciesService, $state, $ionicScrollDelegate) {
+    $ionicScrollDelegate.anchorScroll();
 
     //get ID
     $scope.id = $stateParams.ID;
@@ -56,4 +56,3 @@ angular.module('acimsApp.controllers', [])
 
 
   .controller('rankingsCtrl', function($scope) {});
-
