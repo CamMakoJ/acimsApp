@@ -4,16 +4,17 @@ This page is the general list page
 -->
 
 <!--Search Bar -->
-
-<label class="item item-input">
-  <i class="icon ion-search placeholder-icon"></i>
-  <input ng-model="filterInput" type="search" placeholder="Search">
-</label>
+<div>
+  <label class="item item-input">
+      <i class="icon ion-search placeholder-icon"></i>
+      <input ng-model="filterInput" type="search" placeholder="Search">
+    </label>
+</div>
 
 <div>
   <ion-list>
-    <div class="card" collection-repeat="x in data | filter:filterInput | orderBy:'ScientificName_Acims'">
-      <div class="item item-divider">
+    <div class="card" collection-repeat="x in data | filter:filterInput | orderBy:'ScientificName_Acims'" item-height="100px">
+      <div class="item item-divider item-text-wrap">
         <a ui-sref="species({ID: x.ID})" class="italics" ng-click="updateFilter()">{{x.ScientificName_Acims}} </a>
       </div>
       <div class="item item-text-wrap">
