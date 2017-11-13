@@ -6,7 +6,7 @@ angular.module('acimsApp.controllers', [])
     };
   })
 
-  .controller('SearchCtrl', function(listService, $scope, $rootScope) {
+  .controller('SearchCtrl', function(listService, $scope, $rootScope, $window) {
 
     $scope.updateFilter = function() {
       $rootScope.filterInput = $scope.filterInput;
@@ -20,6 +20,16 @@ angular.module('acimsApp.controllers', [])
     };
 
     $scope.pullList();
+
+    this.listStyle = {
+          height: ($window.innerHeight - 112) + 'px'
+        };
+        $window.addEventListener('resize', onResize);
+        function onResize() {
+          self.listStyle.height = ($window.innerHeight - 112) + 'px';
+          if(!$scope.$root.$$phase) $scope.$digest();
+        }
+
   })
 
   .controller('AboutCtrl', function($http, $scope, $state) {
