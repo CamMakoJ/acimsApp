@@ -3,6 +3,8 @@
   "version": "1.1.1",
   "description": "acimsApp: An Ionic project",
   "dependencies": {
+    "cordova-android": "^6.3.0",
+    "cordova-plugin-device": "^1.1.7",
     "gulp": "^3.5.6",
     "gulp-concat": "^2.2.0",
     "gulp-minify-css": "^0.3.0",
@@ -23,5 +25,13 @@
     "cordova-plugin-splashscreen",
     "ionic-plugin-keyboard"
   ],
-  "cordovaPlatforms": []
+  "cordovaPlatforms": [],
+  "cordova": {
+    "platforms": [
+      "android"
+    ],
+    "plugins": {
+      "cordova-plugin-device": {}
+    }
+  }
 }

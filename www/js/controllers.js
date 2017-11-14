@@ -22,13 +22,14 @@ angular.module('acimsApp.controllers', [])
     $scope.pullList();
 
     this.listStyle = {
-          height: ($window.innerHeight - 112) + 'px'
-        };
-        $window.addEventListener('resize', onResize);
-        function onResize() {
-          self.listStyle.height = ($window.innerHeight - 112) + 'px';
-          if(!$scope.$root.$$phase) $scope.$digest();
-        }
+      height: ($window.innerHeight - 112) + 'px'
+    };
+    $window.addEventListener('resize', onResize);
+
+    function onResize() {
+      self.listStyle.height = ($window.innerHeight - 112) + 'px';
+      if (!$scope.$root.$$phase) $scope.$digest();
+    }
 
   })
 
@@ -39,17 +40,7 @@ angular.module('acimsApp.controllers', [])
     };
   })
 
-  .controller('HomeCtrl', function($http, $scope, $state) {
-    function onDeviceReady() {
-      admob.createBannerView({
-        publisherId: "ca-app-pub-5841639947461001/2632111177"
-      });
-    }
-
-    document.addEventListener('deviceready', onDeviceReady, false);
-
-
-  })
+  .controller('HomeCtrl', function($http, $scope, $state) {})
 
 
   .controller('speciesCtrl', function($http, $scope, $stateParams, speciesService, $state, $ionicScrollDelegate) {
